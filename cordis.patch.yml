@@ -1,0 +1,4 @@
+# Portable bundle. Development watch paths belong to the local DSH profile.
+- insert:
+    - id: ssh
+      name: '@local/dsh-ssh'

@@ -1,0 +1,52 @@
+{
+  "name": "@local/dsh-ssh",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "SSH remote development for DeepSeek Harness: connect a VM or dev board, drive it from the Agent, and use it from the right Sidebar.",
+  "meta": {
+    "title": "SSH",
+    "description": "Connect SSH hosts, run their commands, and read and edit their files."
+  },
+  "icon": "./icon.svg",
+  "scripts": {
+    "build": "node tools/build-client-chunk.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:ui": "node tests/ui-smoke.mjs",
+    "test:live": "node tests/integration-ui.mjs",
+    "test:backend-live": "node tests/integration-backend.mjs",
+    "test:terminal-live": "node tests/integration-terminal.mjs",
+    "test:workspace-live": "node tests/integration-workspace.mjs",
+    "test:projects-live": "node tests/integration-projects.mjs",
+    "prepare:test-runtime": "node tools/prepare-test-runtime.mjs"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "src",
+    "vendor",
+    "tools",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}

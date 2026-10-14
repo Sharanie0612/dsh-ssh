@@ -1,0 +1,9 @@
+artifacts/
+node_modules/
+.backend-test-*/
+*.log
+.ssh-workspaces/
+.env
+.env.*
+*.pem
+*.key

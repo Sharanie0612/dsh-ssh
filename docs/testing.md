@@ -25,6 +25,17 @@ npm run test:ui
 
 提取文件和截图写入 `artifacts/`，不会进入 Git 提交。测试使用独立存储，不修改实际 DSH profile。
 
+## 离线安装验证
+
+```bash
+npm run pack:offline
+npm run test:install
+```
+
+安装用例使用真实 DSH PluginManager，在独立的全新 profile、空 pnpm store 和 pnpm 离线模式下安装本地 `.tgz`，
+检查 bundle 声明、版本、补丁导出和主机工具激活。它不需要访问 GitHub，不修改实际用户 profile。
+如 pnpm 安装位置不同，通过 `DSH_TEST_PNPM` 指定 `pnpm.cjs` 路径。
+
 ## 真实 SSH 集成
 
 先确认普通终端可以非交互访问 SSH 别名，然后把 `dev-vm` 换为该别名：

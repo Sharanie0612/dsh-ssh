@@ -5,7 +5,7 @@
 <p align="center"><strong>在 DeepSeek Harness 中，通过图形界面连接虚拟机与远端工程。</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.2.0-2563eb" alt="Version 0.2.0">
+  <img src="https://img.shields.io/badge/version-0.2.1-2563eb" alt="Version 0.2.1">
   <img src="https://img.shields.io/badge/status-experimental-f59e0b" alt="Experimental">
   <img src="https://img.shields.io/badge/DSH-tested%20on%200.2.0--rc.2-14b8a6" alt="Tested with DSH 0.2.0-rc.2">
   <img src="https://img.shields.io/badge/transport-OpenSSH-64748b" alt="OpenSSH">
@@ -69,7 +69,35 @@ Host dev-vm
 
 Agent 工具、目录选择器和非交互命令使用 `BatchMode=yes`，需要密钥或 `ssh-agent` 认证。密码输入仅适用于交互终端。
 
-### 2. 获取插件
+### 2. 离线安装（GitHub 连接超时时推荐）
+
+下载 [dsh-ssh-0.2.1.tgz](releases/dsh-ssh-0.2.1.tgz?raw=true)，也可由已经下载的人直接发送给你。
+
+1. 把 `.tgz` 文件保存到本机，**不要解压**。
+2. 打开 DSH **插件 → 手动安装**。
+3. 输入该文件的完整绝对路径，例如 `C:/Downloads/dsh-ssh-0.2.1.tgz`。
+4. 安装并启用后，刷新页面或重启 DSH。
+
+这是预构建、无运行时依赖的安装包，安装它不需要 DSH 再连接 GitHub，也不需要 Git。
+包名 `@local/dsh-ssh` **尚未发布到 npm**，不能只把这个包名填进安装框。修改 npm 源不能修复 GitHub 仓库连接超时。
+
+可使用对应的 [SHA-256 校验文件](releases/dsh-ssh-0.2.1.tgz.sha256) 核对下载内容：
+
+```powershell
+Get-FileHash C:/Downloads/dsh-ssh-0.2.1.tgz -Algorithm SHA256
+```
+
+### 3. 从 GitHub 安装（需要网络可达）
+
+DSH 手动安装框可填写：
+
+```text
+https://github.com/Sharanie0612/dsh-ssh
+```
+
+如果 DSH 的 GitHub 连接预检查超时，改用上面的本地 `.tgz` 方式。
+
+### 4. 源码目录安装
 
 ```bash
 git clone https://github.com/Sharanie0612/dsh-ssh.git
@@ -77,8 +105,6 @@ cd dsh-ssh
 ```
 
 仓库包含已构建的终端模块，使用插件无需额外安装 xterm 或 React。
-
-### 3. 安装到 DSH
 
 打开插件管理界面，将克隆目录的**绝对路径**作为 bundle 安装。也可使用 DSH 的 `plugin_manager` 工具：
 
@@ -179,6 +205,8 @@ docs/       使用素材与测试指南
 ```
 
 修改终端视图或 vendored 资源后，运行 `npm run build`。修改主机代码后重新加载插件或重启 DSH，修改前端后刷新页面。开发用 HMR 监听路径应在本机 profile 配置，bundle 不包含固定机器路径。
+
+生成离线安装包：`npm run pack:offline`。输出在 `releases/`，包中已包含终端模块、bundle 补丁和所需页面资源。
 
 ## 认证与许可
 

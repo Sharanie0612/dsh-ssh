@@ -8,7 +8,7 @@ import * as sshPlugin from '../../lib/index.js'
 
 // Resolve the complete installed DSH runtime, keeping every service in one
 // module graph. This test does not read or modify the user's credential store.
-export async function startLiveServer({ handlePage, nativeWorkspaces = false } = {}) {
+export async function startLiveServer({ handlePage, nativeWorkspaces = false, mountSsh = true } = {}) {
   const anchor = process.env.DSH_TEST_ANCHOR ?? join(homedir(), '.dsh', 'profiles', 'package.json')
   const require = createRequire(anchor)
   const runtime = process.env.DSH_TEST_RUNTIME ?? fileURLToPath(new URL('../../artifacts/runtime/dsh/node_modules/', import.meta.url))
@@ -49,9 +49,9 @@ export async function startLiveServer({ handlePage, nativeWorkspaces = false } =
     await ctx.plugin(subprocess.default)
     await ctx.plugin(web.default, { host: '127.0.0.1', port: 0, compression: 'none' })
     await ctx.plugin(connection, {})
-    const sshFiber = await ctx.plugin({ ...sshPlugin, apply: ctx => sshPlugin.apply(ctx, { workspaceRoot: join(home, 'projects') }) })
+    const sshFiber = mountSsh ? await ctx.plugin({ ...sshPlugin, apply: ctx => sshPlugin.apply(ctx, { workspaceRoot: join(home, 'projects') }) }) : null
     if (errors.length) throw new AggregateError(errors, 'DSH test runtime failed to start')
-    if (!ctx.connection || !ctx.webServer?.port || !ctx.tools.get('ssh_exec')) {
+    if (!ctx.connection || !ctx.webServer?.port || (mountSsh && !ctx.tools.get('ssh_exec'))) {
       throw new Error('DSH SSH plugin services did not activate')
     }
     if (handlePage) ctx.webServer.registerFallback((req, res) => {

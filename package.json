@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-ssh",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "description": "SSH remote development for DeepSeek Harness: connect a VM or dev board, drive it from the Agent, and use it from the right Sidebar.",
@@ -11,6 +11,8 @@
   "icon": "./icon.svg",
   "scripts": {
     "build": "node tools/build-client-chunk.mjs",
+    "pack:offline": "node tools/package-offline.mjs",
+    "test:install": "node tests/integration-install.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:ui": "node tests/ui-smoke.mjs",
     "test:live": "node tests/integration-ui.mjs",
@@ -24,6 +26,7 @@
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
     "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
     "./locale/*.json": "./locale/*.json"
   },
   "files": [
@@ -34,7 +37,8 @@
     "tools",
     "cordis.patch.yml",
     "icon.svg",
-    "README.md"
+    "README.md",
+    "docs"
   ],
   "dsh": {
     "bundle": {

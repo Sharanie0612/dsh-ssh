@@ -1,5 +1,12 @@
 # DSH SSH 0.2.0 验证记录
 
+## 0.2.1 离线安装修复（2026-10-14）
+
+DSH 的 GitHub 仓库安装有连接预检查；GitHub 超时与 npm registry 设置是不同的步骤。
+新增预构建 `.tgz`、SHA-256 校验文件及本地路径安装说明，避免安装时再次访问 GitHub。
+真实 DSH PluginManager 在全新测试 profile、空 pnpm store、pnpm 离线模式下安装并启用成功，
+安装目录中的主机模块可直接激活 SSH 工具。整体包名仍为 `@local/dsh-ssh`，尚未发布 npm。
+
 真实 SSH 验证日期：2026-10-13（Asia/Shanghai）。发布前单元与界面回归复查：2026-10-14。
 下文的 `dev-vm` 为已匿名化的测试主机别名，复现时替换为自己的 SSH 配置别名。
 

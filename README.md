@@ -1,17 +1,25 @@
-# DSH SSH
+<picture>
+  <source media="(max-width: 640px)" srcset="https://raw.githubusercontent.com/Sharanie0612/dsh-ssh/19964209017b8f4467df7b52e7d3cef45018d817/docs/images/readme-light-hero-mobile.svg">
+  <img src="https://raw.githubusercontent.com/Sharanie0612/dsh-ssh/19964209017b8f4467df7b52e7d3cef45018d817/docs/images/readme-light-hero.svg" alt="DSH SSH — DeepSeek Harness 的 SSH 远程开发插件。远端工程，也能近在手边。" width="1200">
+</picture>
 
-在 DeepSeek Harness 中连接远端工程，浏览文件、使用终端，并让 Agent 通过 SSH 执行任务。
+<p align="center">
+  <a href="https://www.npmjs.com/package/@sharanie/dsh-ssh">npm 安装</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="https://github.com/Sharanie0612/dsh-ssh/blob/main/docs/usage.md">使用手册</a> ·
+  <a href="https://github.com/Sharanie0612/dsh-ssh/issues">问题反馈</a>
+</p>
 
-[npm](https://www.npmjs.com/package/@sharanie/dsh-ssh) · [使用手册](https://github.com/Sharanie0612/dsh-ssh/blob/main/docs/usage.md) · [问题反馈](https://github.com/Sharanie0612/dsh-ssh/issues)
+DSH SSH 将虚拟机、服务器或开发板上的工程接入 DeepSeek Harness。浏览文件、打开终端，再让 Agent 通过 SSH 执行任务。
 
-## 能做什么
+## 功能一览
 
-- **远端工作区** — 选择 SSH 主机与工程目录，添加到左侧工作区。
-- **文件浏览** — 查看目录、预览文本，从文件或目录发起对话。
-- **交互终端** — 在 DSH 内打开 SSH 终端，支持中文与窗口尺寸调整。
-- **Agent 协作** — 执行命令、搜索和编辑代码、上传下载文件；每个对话独立绑定主机与目录。
+<picture>
+  <source media="(max-width: 640px)" srcset="https://raw.githubusercontent.com/Sharanie0612/dsh-ssh/19964209017b8f4467df7b52e7d3cef45018d817/docs/images/readme-light-features-mobile.svg">
+  <img src="https://raw.githubusercontent.com/Sharanie0612/dsh-ssh/19964209017b8f4467df7b52e7d3cef45018d817/docs/images/readme-light-features.svg" alt="功能示意：远端工作区、目录与文本浏览、交互 SSH 终端，以及 Agent 命令执行、代码搜索编辑和文件传输。" width="1200">
+</picture>
 
-工程文件保留在远端。插件沿用本机 OpenSSH 配置，远端无需安装 DSH。
+工程文件保留在远端。插件沿用本机 OpenSSH 配置，远端无需安装 DSH；每个对话独立绑定主机与工程目录。
 
 ## 快速开始
 

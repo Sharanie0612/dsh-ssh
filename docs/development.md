@@ -41,6 +41,16 @@ npm run test:projects-live -- dev-vm
 
 </details>
 
+## README 图片
+
+浅色横幅和功能卡片使用 SVG，窄屏使用单列布局。修改配色、文字或图标后运行：
+
+```bash
+node tools/build-readme-art.mjs
+```
+
+脚本不需要额外依赖，输出位于 `docs/images/readme-light-*.svg`。README 的图片引用固定资源提交，以便 GitHub 预览和 npm 页面同时加载；更新图片后也应更新对应的资源提交地址。
+
 ## 项目结构
 
 ```text

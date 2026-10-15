@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">DSH SSH · 远端工程，也能近在手边。</title>
+  <desc id="desc">DeepSeek Harness SSH 插件：工作区、文件浏览、交互终端与 Agent 协作。浅色卡片为功能示意。</desc>
+  <defs>
+    <filter id="shadow" x="-15%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#486788" flood-opacity=".07"/>
+    </filter>
+  </defs>
+  <g font-family="&quot;Segoe UI&quot;, &quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, &quot;Noto Sans CJK SC&quot;, Arial, sans-serif">
+    <rect x="1" y="1" width="1198" height="398" rx="28" fill="#f5f8fc" stroke="#e1e8f1"/>
+    <path d="M969 1h202q28 0 28 28v270A290 290 0 0 1 969 1" fill="#eaf2fc"/>
+    <rect x="54" y="43" width="60" height="60" rx="17" fill="#fff" stroke="#dfe8f3"/>
+    <g transform="translate(60 49) scale(0.9)" fill="none" stroke="#3977b3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="46" height="37" rx="6"/><path d="m14 20 7 7-7 7M28 34h10"/></g>
+    <text x="132" y="80" font-size="18" fill="#647d95" font-weight="600" letter-spacing="1.8">DEEPSEEK HARNESS</text>
+    <text x="51" y="207" font-size="100" fill="#213449" font-weight="700" letter-spacing="-4">DSH <tspan fill="#377bb7">SSH</tspan></text>
+    <text x="58" y="266" font-size="33" fill="#52677d" font-weight="500" >远端工程，也能近在手边。</text>
+    <g font-size="17" fill="#688198">
+      <rect x="57" y="307" width="113" height="37" rx="12" fill="#fff" stroke="#e1e8f0"/>
+      <text x="77" y="332">OpenSSH</text>
+      <rect x="180" y="307" width="90" height="37" rx="12" fill="#edf6f1" stroke="#dfece5"/>
+      <text x="203" y="332" fill="#5b8b75">Agent</text>
+      <rect x="280" y="307" width="111" height="37" rx="12" fill="#f1eef9" stroke="#e7e3f1"/>
+      <text x="299" y="332" fill="#8476a4">Terminal</text>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="685" y="57" width="447" height="207" rx="23" fill="#fff" stroke="#dde7f1"/>
+      <rect x="707" y="80" width="60" height="60" rx="16" fill="#edf6f1"/>
+      <g transform="translate(711 84) scale(0.98)" fill="none" stroke="#4c977b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h15l5 6h23v27H5z"/><path d="M5 21h43"/></g>
+      <text x="784" y="108" font-size="27" fill="#344f68" font-weight="600" >dev-vm</text>
+      <text x="784" y="138" font-size="18" fill="#8a9bad" font-weight="400" font-family="Consolas, &quot;SFMono-Regular&quot;, monospace">~/projects/demo</text>
+      <circle cx="1100" cy="105" r="6" fill="#79b89e"/>
+      <rect x="715" y="172" width="139" height="9" rx="4.5" fill="#e5edf5"/>
+      <rect x="715" y="196" width="249" height="9" rx="4.5" fill="#eff3f8"/>
+      <rect x="715" y="220" width="191" height="9" rx="4.5" fill="#eff3f8"/>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="753" y="226" width="394" height="120" rx="20" fill="#fff" stroke="#dfe7f1"/>
+      <circle cx="775" cy="247" r="3.5" fill="#b5c6d9"/><circle cx="788" cy="247" r="3.5" fill="#cfdae7"/><circle cx="801" cy="247" r="3.5" fill="#e0e7ef"/>
+      <text x="776" y="286" font-size="22" fill="#506b84" font-weight="400" font-family="Consolas, &quot;SFMono-Regular&quot;, monospace"><tspan fill="#5c9a81">$</tspan> git status --short</text>
+      <rect x="779" y="309" width="127" height="7" rx="3.5" fill="#e8f1ed"/>
+      <rect x="917" y="309" width="65" height="7" rx="3.5" fill="#edf2f7"/>
+    </g>
+  </g>
+</svg>
